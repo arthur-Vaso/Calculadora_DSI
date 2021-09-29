@@ -11,18 +11,28 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controler.Calculate;
+
 /**
  *
  * @author Arthur Vaso
  */
-class MainWindow extends JFrame{
+public class MainWindow extends JFrame{
 
 	private JPanel panelMain;
 	
     private JPanel panelScrean;
     private JTextField fldScrean;
     
-    private JPanel panelBtnNums;
+    public JTextField getFldScrean() {
+		return fldScrean;
+	}
+
+	public void setFldScrean(String screan) {
+		this.fldScrean.setText(screan);;
+	}
+
+	private JPanel panelBtnNums;
     private JButton btn_0;
     private JButton btn_1;
     private JButton btn_2;
@@ -69,7 +79,7 @@ class MainWindow extends JFrame{
         panelBtnNums = new JPanel(gridBag);
         btn_7 = new JButton("7");
         btn_7.addActionListener((e) -> {
-            
+            Calculate calc = new Calculate(this, 7);
         });
         btn_7.setFont(fontSize);
         
